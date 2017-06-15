@@ -1,0 +1,6 @@
+bool unused
+---
+float32 voltage_12v
+float32 voltage_5v
+float32 voltage_vbat
+float32 current_ibat
