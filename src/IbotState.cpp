@@ -35,9 +35,8 @@ IbotState::IbotState(ros::NodeHandle &node)
     name = SERVICE_US_GROUND;
   m_service_us_bottom = node.serviceClient<ultrasonic>(name);
 
-  if(!node.getParam("obstacle_threshold",name))
+  if(!node.getParam("obstacle_threshold",(double&)m_seuil))
     name = OBSTACLE_THRESHOLD;
-  m_seuil = std::stod(name);
 
   m_us_service_data.request.unused = 1;
   m_stop_twist.linear.x = 0.0f; m_stop_twist.angular.z = 0.0f;
